@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  svc_name:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    stdin_open: true
+    tty: true
+    ports:
+      - "8889:8889"
+      - "80:80"
+      - "5000:5000"
+      - "3306:3306"
+    restart: always
+    volumes:
+      - /:/workspace
+    container_name: con_name
+
